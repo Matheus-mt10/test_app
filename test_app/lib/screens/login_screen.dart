@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/components/base_scaffold.dart';
 import 'package:test_app/components/input.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -11,7 +12,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return BaseScaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
