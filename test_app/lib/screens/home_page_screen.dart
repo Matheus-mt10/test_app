@@ -33,7 +33,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
                     FilledButton(
                         onPressed: () => context.read<HomePageBloc>().add(
                             const ChangePlayer('Matheus Santana',
-                                'Brilhante Jogador brasileiro que sofre com lesão e atuou pouco mas sempre com muito estilo')),
+                                'Brilhante Jogador brasileiro que sofreu com lesão e atuou pouco mas sempre com muito estilo')),
                         child: const Text(
                           "Conhecer os Craques",
                           style: TextStyle(fontSize: 16),
