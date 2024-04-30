@@ -1,33 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:test_app/components/base_scaffold.dart';
-import 'package:test_app/screens/bloc/homepage/homepage_bloc.dart';
 
 
-class HomePageScreen extends StatelessWidget {
+
+class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return  BlocProvider(
-  create: (BuildContext context) => HomePageBloc(),
-  child: const HomePageScreenView(),
-);
-  }
+  State<HomePageScreen>createState() => _HomePageScreenState();
 }
 
-
-class HomePageScreenView extends StatefulWidget {
-  const HomePageScreenView({super.key});
-
-  @override
-  State<HomePageScreenView> createState() => _HomePageScreenViewState();
-}
-
-class _HomePageScreenViewState extends State<HomePageScreenView> {
+class _HomePageScreenState extends State<HomePageScreen> {
   @override
   Widget build(BuildContext context) {
-    return   const BaseScaffold(
+    return const BaseScaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
