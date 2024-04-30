@@ -80,8 +80,58 @@ class _HomePageScreenState extends State<HomePageScreen> {
                         ),
                         FilledButton(
                             onPressed: () => context.read<HomePageBloc>().add(
-                                const ChangePlayer('Lebron James',
-                                    'LeBron Raymone James é um basquetebolista norte-americano que atua como ala pelo Los Angeles Lakers. Apelidado de King James, é amplamente reconhecido como um dos maiores jogadores de basquetebol de todos os tempos, ocupando a segunda posição na lista divulgada pela ESPN em 2020, atrás apenas de Michael Jordan.')),
+                                  const ChangePlayer('Lebron James',
+                                      'LeBron Raymone James é um basquetebolista norte-americano que atua como ala pelo Los Angeles Lakers. Apelidado de King James, é amplamente reconhecido como um dos maiores jogadores de basquetebol de todos os tempos, ocupando a segunda posição na lista divulgada pela ESPN em 2020, atrás apenas de Michael Jordan.'),
+                                ),
+                            child: const Text("Escolher outro jogador"))
+                      ],
+                    )
+                  ],
+                );
+              }
+
+              if (state is HomepagePlayer2) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
+                      child: SizedBox(
+                        width: 170,
+                        height: 170,
+                        child: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            "https://wallpaperspeople.com/wp-content/uploads/2019/03/Lebron-James-2.jpg",
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 10),
+                      child: Text(
+                        "Player: ${state.playerName2}",
+                        style: const TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "História: ${state.playerHistory2}",
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        FilledButton(
+                            onPressed: () => context.read<HomePageBloc>().add(
+                                  const ChangePlayer2(
+                                      playerName2: 'playerName2',
+                                      playerHistory2: 'ory2'),
+                                ),
                             child: const Text("Escolher outro jogador"))
                       ],
                     )
